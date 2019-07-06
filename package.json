@@ -1,0 +1,17 @@
+{
+  "name": "vdom",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/talentlessguy/vdom.git",
+  "author": "talentlessguy <pilll.PL22@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  },
+  "dependencies": {
+    "htm": "^2.1.1"
+  },
+  "scripts": {
+    "dev": "parcel index.html -p 80 --open"
+  }
+}
