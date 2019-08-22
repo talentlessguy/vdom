@@ -70,6 +70,12 @@ export const diff = (oldTree, newTree) => {
     if (oldTree !== newTree) {
       return node => {
         const newNode = renderToDOM(newTree)
+        console.log(`
+        Old tree: ${oldTree}
+        New tree: ${newTree}
+        Old node: ${node}
+        New node: ${newNode}
+        `)
         node.replaceWith(newNode)
         return newNode
       }

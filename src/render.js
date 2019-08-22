@@ -9,11 +9,12 @@ export const isTextNode = node =>
 
 export const renderNode = vnode => {
   let el
-  const { tag, props, children } = vnode
 
   if (isTextNode(vnode)) {
     return document.createTextNode(vnode)
   }
+
+  const { tag, props, children } = vnode
 
   el = document.createElement(tag)
 
@@ -43,7 +44,6 @@ export const renderToDOM = vnode => {
     isTextNode(renderNode(vnode))
   ) {
     vToRender = renderNode(vnode)
-    console.log(vToRender)
   }
 
   return vToRender

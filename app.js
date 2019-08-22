@@ -1,5 +1,5 @@
 import { h } from './src/h'
-import { render, renderToDOM } from './src/render'
+import { render } from './src/render'
 import { diff } from './src/diff'
 import htm from 'htm'
 
@@ -25,5 +25,4 @@ setInterval(() => {
 
   mount = patch(mount, document.getElementById('app'))
 
-  console.log(AppWithProps, mount.outerHTML)
 }, 1000)
