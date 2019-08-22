@@ -6,6 +6,7 @@
   "author": "talentlessguy <pilll.PL22@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^6.2.1",
     "parcel-bundler": "^1.12.3"
   },
   "dependencies": {

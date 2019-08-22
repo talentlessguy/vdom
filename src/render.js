@@ -18,7 +18,7 @@ export const renderNode = vnode => {
   el = document.createElement(tag)
 
   if (props) {
-    for (let [k, v] of Object.etries(props)) {
+    for (let [k, v] of Object.entries(props)) {
       if (k in el) {
         el.setAttribute(k, v)
       } else if (k === 'style') {
@@ -43,6 +43,7 @@ export const renderToDOM = vnode => {
     isTextNode(renderNode(vnode))
   ) {
     vToRender = renderNode(vnode)
+    console.log(vToRender)
   }
 
   return vToRender

@@ -58,6 +58,7 @@ const diffChildren = (oldChildren, newChildren) => {
 }
 
 export const diff = (oldTree, newTree) => {
+
   if (newTree === undefined) {
     return node => {
       node.remove()

@@ -5,11 +5,9 @@ import htm from 'htm'
 
 const html = htm.bind(h)
 
-let counter = 0
-
 let App = counter =>
   html`
-    <p>${counter}</p>
+    <p fontSize="${counter * 10 + 'px'}">${counter}</p>
   `
 
 let AppWithProps = App(0)
@@ -21,11 +19,11 @@ setInterval(() => {
 
   const newApp = App(newCounter)
 
-  const patch = diff(App, newApp)
+  const patch = diff(AppWithProps, newApp)
 
   AppWithProps = newApp
 
-  mount = patch(mount)
+  mount = patch(mount, document.getElementById('app'))
 
   console.log(AppWithProps, mount.outerHTML)
 }, 1000)
