@@ -12,11 +12,13 @@ const diffProps = (oldProps, newProps) => {
   const patches = []
 
   // setting new props
-  for (let [k, v] of Object.entries(newProps)) {
-    patches.push(node => {
-      node.setAttribute(k, v)
-      return node
-    })
+  if (newProps) {
+    for (let [k, v] of Object.entries(newProps)) {
+      patches.push(node => {
+        node.setAttribute(k, v)
+        return node
+      })
+    }
   }
 
   // removing props

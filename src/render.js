@@ -37,9 +37,7 @@ export const renderNode = vnode => {
 
 
 export const render = (vnode, target) => {
-  target.replaceWith(renderNode(vnode))
-
-  console.log(target.outerHTML)
+  target.appendChild(renderNode(vnode))
 
   return renderNode(vnode)
 }
