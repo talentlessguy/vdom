@@ -1,6 +1,5 @@
 dependencies:
   htm: 2.2.1
-  lodash.zip: 4.2.0
 devDependencies:
   eslint: 6.2.1
   parcel-bundler: 1.12.3
@@ -3295,10 +3294,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
-  /lodash.zip/4.2.0:
-    dev: false
-    resolution:
-      integrity: sha1-7GZi5IlkCO1KtsVCo5kLcswIACA=
   /lodash/4.17.15:
     dev: true
     resolution:
@@ -5632,5 +5627,4 @@ packages:
 specifiers:
   eslint: ^6.2.1
   htm: ^2.2.1
-  lodash.zip: ^4.2.0
   parcel-bundler: ^1.12.3
