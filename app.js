@@ -5,11 +5,9 @@ import htm from 'htm'
 
 const html = htm.bind(h)
 
-let App = counter => html`<font size="${counter * 2}px"><span>${counter}</span></font>`
+let App = counter => html`<p style="${{ fontSize: counter * 2 + 'px'}}"><span>${counter}</span></p>`
 
 let AppWithProps = App(0)
-
-// works fine
 
 let mount = render(AppWithProps, document.getElementById('app'))
 

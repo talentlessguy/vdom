@@ -7,7 +7,11 @@ const diffProps = (oldProps, newProps) => {
   if (newProps) {
     for (let [k, v] of Object.entries(newProps)) {
       patches.push(node => {
-        node.setAttribute(k, v)
+        if (k === 'style') {
+          for (let [prop, val] of Object.entries(v)) {
+            node.style[prop] = val
+          }
+        } else node.setAttribute(k, v)
         return node
       })
     }
@@ -54,6 +58,12 @@ const diffChildren = (oldChildren, newChildren) => {
 
 export const diff = (oldTree, newTree) => {
 
+  const renderAndReplace = node => {
+    const newNode = renderNode(newTree)
+    node.replaceWith(newNode)
+    return newNode
+  }
+
   if (newTree === undefined) {
     return node => {
       node.remove()
@@ -63,22 +73,14 @@ export const diff = (oldTree, newTree) => {
 
   if (isTextNode(oldTree) || isTextNode(newTree)) {
     if (oldTree !== newTree) {
-      return node => {
-        const newNode = renderNode(newTree)
-        node.replaceWith(newNode)
-        return newNode
-      }
+      return renderAndReplace
     } else {
       return node => node
     }
   }
 
   if (oldTree.tag !== newTree.tag) {
-    return node => {
-      const newNode = renderNode(newTree)
-      node.replaceWith(newNode)
-      return newNode
-    }
+    return renderAndReplace
   }
 
   const patchProps = diffProps(oldTree.props, newTree.props)

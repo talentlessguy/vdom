@@ -20,13 +20,11 @@ export const renderNode = vnode => {
 
   if (props) {
     for (let [k, v] of Object.entries(props)) {
-      if (k in el) {
-        el.setAttribute(k, v)
-      } else if (k === 'style') {
-        for (let [prop, val] of v) {
+      if (k === 'style') {
+        for (let [prop, val] of Object.entries(v)) {
           el.style[prop] = val
         }
-      }
+      } else el.setAttribute(k, v)
     }
   }
 
