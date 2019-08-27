@@ -11,7 +11,7 @@ export const renderNode = vnode => {
   let el
 
   if (isTextNode(vnode)) {
-    return document.createTextNode(vnode)
+    return document.createTextNode(vnode.toString())
   }
 
   const { tag, props, children } = vnode
@@ -35,22 +35,11 @@ export const renderNode = vnode => {
   return el
 }
 
-export const renderToDOM = vnode => {
-  let vToRender
-
-  // Render vnode
-  if (
-    renderNode(vnode) instanceof HTMLElement ||
-    isTextNode(renderNode(vnode))
-  ) {
-    vToRender = renderNode(vnode)
-  }
-
-  return vToRender
-}
 
 export const render = (vnode, target) => {
-  target.appendChild(renderToDOM(vnode))
+  target.replaceWith(renderNode(vnode))
 
-  return renderToDOM(vnode)
+  console.log(target.outerHTML)
+
+  return renderNode(vnode)
 }

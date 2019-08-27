@@ -10,9 +10,9 @@
     "parcel-bundler": "^1.12.3"
   },
   "dependencies": {
-    "htm": "^2.1.1"
+    "htm": "^2.2.1"
   },
   "scripts": {
-    "dev": "parcel index.html -p 80 --open"
+    "dev": "parcel index.html -p 3000 --open"
   }
 }

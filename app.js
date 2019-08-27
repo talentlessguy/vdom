@@ -5,24 +5,38 @@ import htm from 'htm'
 
 const html = htm.bind(h)
 
-let App = counter =>
-  html`
-    <p fontSize="${counter * 10 + 'px'}">${counter}</p>
-  `
+let App = counter => {
+
+  const app = h('p', {}, h('span', {}, counter))
+
+  // console.log(JSON.stringify(app, null, 2))
+
+  return app
+}
 
 let AppWithProps = App(0)
 
-let mount = render(AppWithProps, document.getElementById('app'))
 
-setInterval(() => {
-  const newCounter = parseInt(Math.random() * 10)
+const root = document.getElementById('app')
 
-  const newApp = App(newCounter)
+let mount = render(AppWithProps, root)
 
-  const patch = diff(AppWithProps, newApp)
-
-  AppWithProps = newApp
-
-  mount = patch(mount, document.getElementById('app'))
-
-}, 1000)
+window.onload = () => {
+  setInterval(() => {
+    const newCounter = parseInt(Math.random() * 10)
+  
+    const newApp = App(newCounter)
+  
+    const patch = diff(AppWithProps, newApp)
+  
+    AppWithProps = newApp
+  
+    mount = patch(mount)
+  
+    root.appendChild(mount)
+    console.log(`document root html: ${document.body.children[0].outerHTML}`)
+    console.log(`patched dom: ${root.outerHTML}`)
+  
+  }, 1000)
+  
+}

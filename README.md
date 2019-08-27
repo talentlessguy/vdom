@@ -1,4 +1,4 @@
-# vdom
+# vdom [Work In Progress]
 
 Simple JavaScript Virtual DOM
 

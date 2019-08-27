@@ -1,4 +1,4 @@
-import { isTextNode, renderToDOM } from './render'
+import { isTextNode, renderNode } from './render'
 
 const zip = (xs, ys) => {
   const zipped = []
@@ -43,7 +43,7 @@ const diffChildren = (oldChildren, newChildren) => {
   const additionalPatches = []
   for (let additionalVChild of newChildren.slice(oldChildren.length)) {
     additionalPatches.push(node => {
-      node.appendChild(renderToDOM(additionalVChild))
+      node.appendChild(renderNode(additionalVChild))
       return node
     })
   }
@@ -69,13 +69,7 @@ export const diff = (oldTree, newTree) => {
   if (isTextNode(oldTree) || isTextNode(newTree)) {
     if (oldTree !== newTree) {
       return node => {
-        const newNode = renderToDOM(newTree)
-        console.log(`
-        Old tree: ${oldTree}
-        New tree: ${newTree}
-        Old node: ${node}
-        New node: ${newNode}
-        `)
+        const newNode = renderNode(newTree)
         node.replaceWith(newNode)
         return newNode
       }
@@ -86,7 +80,7 @@ export const diff = (oldTree, newTree) => {
 
   if (oldTree.tag !== newTree.tag) {
     return node => {
-      const newNode = renderToDOM(newTree)
+      const newNode = renderNode(newTree)
       node.replaceWith(newNode)
       return newNode
     }
