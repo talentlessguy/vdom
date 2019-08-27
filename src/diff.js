@@ -1,5 +1,4 @@
 import { isTextNode, renderNode } from './render'
-import zip from 'lodash.zip'
 
 const diffProps = (oldProps, newProps) => {
   const patches = []
@@ -44,7 +43,8 @@ const diffChildren = (oldChildren, newChildren) => {
   }
 
   return parent => {
-    for (let [patch, child] of zip(patches, parent.childNodes)) patch(child)
+
+    Array.from(parent.childNodes).map((child, i) => patches[i](child))
 
     for (let patch of additionalPatches) patch(parent)
 
