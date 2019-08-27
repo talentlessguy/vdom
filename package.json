@@ -10,7 +10,8 @@
     "parcel-bundler": "^1.12.3"
   },
   "dependencies": {
-    "htm": "^2.2.1"
+    "htm": "^2.2.1",
+    "lodash.zip": "^4.2.0"
   },
   "scripts": {
     "dev": "parcel index.html -p 3000 --open"

@@ -1,12 +1,5 @@
 import { isTextNode, renderNode } from './render'
-
-const zip = (xs, ys) => {
-  const zipped = []
-  for (let i = 0; i < Math.min(xs.length, ys.length); i++) {
-    zipped.push([xs[i], ys[i]])
-  }
-  return zipped
-}
+import zip from 'lodash.zip'
 
 const diffProps = (oldProps, newProps) => {
   const patches = []
