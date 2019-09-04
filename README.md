@@ -75,3 +75,15 @@ console.log(vnode)
 ```js
 render(html`<h1>Hello World</h1>`, document.getElementById('app'))
 ```
+
+### `diff` - check for differences in DOM and return patches
+
+```js
+const App = html`<p>Hi</p>`
+
+const newApp = html`<p>Hello</p>`
+
+const dom = diff(App, newApp)
+
+render(dom, document.getElementById('app'))
+```
