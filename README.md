@@ -27,7 +27,7 @@ setInterval(() => {
   // Generate random number
   const newCounter = parseInt(Math.random() * 10)
   
-  // Return new app with new prop
+  // Return new state of app with new prop
   const newApp = App(newCounter)
 
   // Check for changes and collect patches
