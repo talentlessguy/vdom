@@ -1,7 +1,7 @@
 
  <p align="center">
   <b>VDOM</b><br />
-  Simple JavaScript Virtual DOM. Compatible with `htm`.
+ Simple JavaScript Virtual DOM. Compatible with <a href="https://github.com/developit/htm">htm</a>.
   <br />
     <img src="https://cdn.rawgit.com/LunaGao/BlessYourCodeTag/master/tags/unicorn.svg" />
     <img src="https://img.shields.io/github/languages/top/talentlessguy/vdom" />
