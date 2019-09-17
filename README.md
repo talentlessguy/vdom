@@ -1,14 +1,14 @@
-<p align="center">
-  <h1>vdom</h1><br />
-  <b>Simple JavaScript Virtual DOM. Compatible with `htm`.</b>
+
+ <p align="center">
+  <b>vdom</b><br />
+  Simple JavaScript Virtual DOM. Compatible with `htm`.
   <br />
     <img src="https://cdn.rawgit.com/LunaGao/BlessYourCodeTag/master/tags/unicorn.svg" />
     <img src="https://img.shields.io/github/languages/top/talentlessguy/vdom" />
     <a href="https://twitter.com/v1rtl"><img src="https://img.shields.io/twitter/follow/v1rtl?style=social" /></a>
- </p>
-
-
-[Article](https://dev.to/talentlessguy/my-experience-writing-virtual-dom-8bn)
+    <a href="https://dev.to/talentlessguy/my-experience-writing-virtual-dom-8bn"><img src="https://img.shields.io/badge/DEV-Article-black?style=flat-square" /></a>
+  <br><br>
+  </p>
 
 ## Example
 
