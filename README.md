@@ -1,8 +1,16 @@
-# vdom
 
-![](https://cdn.rawgit.com/LunaGao/BlessYourCodeTag/master/tags/unicorn.svg) ![](https://img.shields.io/github/languages/top/talentlessguy/vdom) ![Twitter Follow](https://img.shields.io/twitter/follow/v1rtl?style=social)
 
-Simple JavaScript Virtual DOM. Compatible with `htm`
+<p align="center">
+  <h1>vdom</h1>
+  Simple JavaScript Virtual DOM. Compatible with `htm`.
+  <div>
+    <img src="https://cdn.rawgit.com/LunaGao/BlessYourCodeTag/master/tags/unicorn.svg" />
+    <img src="https://img.shields.io/github/languages/top/talentlessguy/vdom" />
+    <a href="https://twitter.com/v1rtl"><img src="https://img.shields.io/twitter/follow/v1rtl?style=social" /></a>
+  </div>
+ </p>
+
+[Article](https://dev.to/talentlessguy/my-experience-writing-virtual-dom-8bn)
 
 ## Example
 
