@@ -1,6 +1,6 @@
 
  <p align="center">
-  <b>vdom</b><br />
+  <b>VDOM</b><br />
   Simple JavaScript Virtual DOM. Compatible with `htm`.
   <br />
     <img src="https://cdn.rawgit.com/LunaGao/BlessYourCodeTag/master/tags/unicorn.svg" />
