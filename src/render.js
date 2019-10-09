@@ -33,7 +33,6 @@ export const renderNode = vnode => {
   return el
 }
 
-
 export const render = (vnode, target) => {
   target.appendChild(renderNode(vnode))
 
