@@ -1,13 +1,12 @@
-import { h } from './src/h'
-import { render } from './src/render'
-import { diff } from './src/diff'
+import { h, render, diff } from '../../dist/vdom'
+
 import htm from 'htm'
 
 const html = htm.bind(h)
 
-let App = counter =>
+let App = (counter) =>
   html`
-    <p style="${{ fontSize: counter * 2 + 'px' }}"><span>${counter}</span></p>
+    <p style="${{ fontSize: counter * 10 + 'px' }}"><span>${counter}</span></p>
   `
 
 let AppWithProps = App(0)

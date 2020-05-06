@@ -1,18 +1,21 @@
 {
   "name": "vdom",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/vdom.js",
   "repository": "https://github.com/talentlessguy/vdom.git",
   "author": "talentlessguy <pilll.PL22@gmail.com>",
+  "description": "Simple JavaScript Virtual DOM",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^6.2.1",
-    "parcel-bundler": "^1.12.3"
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "eslint": "^6.8.0",
+    "rollup": "^2.8.0"
   },
   "dependencies": {
     "htm": "^2.2.1"
   },
   "scripts": {
-    "dev": "parcel index.html -p 3000 --open"
+    "dev": "rollup -cw",
+    "example": "rollup -c example/rollup.config.js"
   }
 }

@@ -1,13 +1,21 @@
-/*
-
-vnode - h('h1', null, 'Hello World')
-
-*/
-
-export const isTextNode = node =>
+/**
+ * @returns {boolean}
+ * @description Check if node is text
+ * @param {string} node
+ * */
+export const isTextNode = (node) =>
   ['string', 'boolean', 'number'].includes(typeof node)
 
-export const renderNode = vnode => {
+/**
+ * @description Renders a single node
+ * @param {{
+ * tag: string
+ * props: any
+ * children: any[]
+ * }} vnode
+ * @returns {HTMLElement}
+ */
+export const renderNode = (vnode) => {
   let el
 
   if (isTextNode(vnode)) {
@@ -28,11 +36,21 @@ export const renderNode = vnode => {
     }
   }
 
-  children.map(child => el.appendChild(renderNode(child)))
+  children.map((child) => el.appendChild(renderNode(child)))
 
   return el
 }
 
+/**
+ * @description Appends vDOM inside of real DOM
+ * @param {{
+ * tag: string
+ * props: any
+ * children: any[]
+ * }} vnode
+ * @param {HTMLElement} target
+ * @returns {HTMLElement}
+ */
 export const render = (vnode, target) => {
   target.appendChild(renderNode(vnode))
 
