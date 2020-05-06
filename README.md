@@ -1,4 +1,4 @@
-![](logo.png)
+![](logo.jpg)
 
 Simple JavaScript [Virtual DOM](https://reactjs.org/docs/faq-internals.html). Compatible with [htm](https://github.com/developit/htm).
 
