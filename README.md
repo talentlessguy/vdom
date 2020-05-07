@@ -39,7 +39,7 @@ And open it in a browser.
 ### Code
 
 ```js
-import { h, render, diff } from '@'
+import { h, render, diff } from 'talentlessguy/vdom'
 import htm from 'htm'
 
 const html = htm.bind(h)
