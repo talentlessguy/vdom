@@ -1,10 +1,9 @@
 /**
  * @returns {boolean}
  * @description Check if node is text
- * @param {string} node
+ * @param {any} node
  * */
-const isTextNode = (node) =>
-  ['string', 'boolean', 'number'].includes(typeof node);
+const isTextNode = node => ['string', 'boolean', 'number'].includes(typeof node);
 
 /**
  * @description Renders a single node
@@ -13,18 +12,16 @@ const isTextNode = (node) =>
  * props: any
  * children: any[]
  * }} vnode
- * @returns {HTMLElement}
+ * @returns {HTMLElement | Text}
  */
-const renderNode = (vnode) => {
-  let el;
-
+const renderNode = vnode => {
   if (isTextNode(vnode)) {
     return document.createTextNode(vnode.toString())
   }
 
   const { tag, props, children } = vnode;
 
-  el = document.createElement(tag);
+  let el = document.createElement(tag);
 
   if (props) {
     for (let [k, v] of Object.entries(props)) {
@@ -36,7 +33,7 @@ const renderNode = (vnode) => {
     }
   }
 
-  children.map((child) => el.appendChild(renderNode(child)));
+  children.map(child => el.appendChild(renderNode(child)));
 
   return el
 };
@@ -49,7 +46,7 @@ const renderNode = (vnode) => {
  * children: any[]
  * }} vnode
  * @param {HTMLElement} target
- * @returns {HTMLElement}
+ * @returns {HTMLElement | Text}
  */
 const render = (vnode, target) => {
   target.appendChild(renderNode(vnode));
@@ -57,6 +54,11 @@ const render = (vnode, target) => {
   return renderNode(vnode)
 };
 
+/**
+ *
+ * @param {any} oldProps
+ * @param {any} newProps
+ */
 const diffProps = (oldProps, newProps) => {
   const patches = [];
 
@@ -104,7 +106,6 @@ const diffChildren = (oldChildren, newChildren) => {
   }
 
   return parent => {
-
     Array.from(parent.childNodes).map((child, i) => patches[i](child));
 
     for (let patch of additionalPatches) patch(parent);
@@ -114,7 +115,6 @@ const diffChildren = (oldChildren, newChildren) => {
 };
 
 const diff = (oldTree, newTree) => {
-
   const renderAndReplace = node => {
     const newNode = renderNode(newTree);
     node.replaceWith(newNode);

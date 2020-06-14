@@ -11,18 +11,18 @@ Simple JavaScript [Virtual DOM](https://reactjs.org/docs/faq-internals.html). Co
 
 ```sh
 # npm
-npm i talentlessguy/vdom
+npm i simple-vdom
 # pnpm
-pnpm i talentlessguy/vdom
+pnpm i simple-vdom
 # yarn
-yarn add talentlessguy/vdom
+yarn add simple-vdom
 ```
 
 ## Example
 
 ### Try it yourself
 
-To run the example, clone the repository and write this to command line:
+To build the example, clone the repository and write this to command line:
 
 ```sh
 npm run example
@@ -39,16 +39,15 @@ And open it in a browser.
 ### Code
 
 ```js
-import { h, render, diff } from 'talentlessguy/vdom'
+import { h, render, diff } from 'simple-vdom'
 import htm from 'htm'
 
 const html = htm.bind(h)
 
 // Create App component with a prop "counter"
-let App = (counter) =>
-  html`
-    <p style="${{ fontSize: counter * 2 + 'px' }}"><span>${counter}</span></p>
-  `
+let App = counter => html`<p style="${{ fontSize: counter * 2 + 'px' }}">
+  <span>${counter}</span>
+</p>`
 
 // Return component with passed prop
 let AppWithProps = App(0)
@@ -102,7 +101,7 @@ console.log(el)
 Converts objects created by `h` to DOM nodes
 
 ```js
-const vnode = renderNode(html` <h1>Hello World</h1> `)
+const vnode = renderNode(html`<h1>Hello World</h1>`)
 
 console.log(vnode)
 
@@ -114,15 +113,15 @@ console.log(vnode)
 ### `render` - put vnode to container
 
 ```js
-render(html` <h1>Hello World</h1> `, document.getElementById('app'))
+render(html`<h1>Hello World</h1>`, document.getElementById('app'))
 ```
 
 ### `diff` - check for differences in DOM and return patches
 
 ```js
-const App = html` <p>Hi</p> `
+const App = html`<p>Hi</p>`
 
-const newApp = html` <p>Hello</p> `
+const newApp = html`<p>Hello</p>`
 
 const dom = diff(App, newApp)
 

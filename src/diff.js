@@ -1,5 +1,10 @@
 import { isTextNode, renderNode } from './render'
 
+/**
+ *
+ * @param {any} oldProps
+ * @param {any} newProps
+ */
 const diffProps = (oldProps, newProps) => {
   const patches = []
 
@@ -47,7 +52,6 @@ const diffChildren = (oldChildren, newChildren) => {
   }
 
   return parent => {
-
     Array.from(parent.childNodes).map((child, i) => patches[i](child))
 
     for (let patch of additionalPatches) patch(parent)
@@ -57,7 +61,6 @@ const diffChildren = (oldChildren, newChildren) => {
 }
 
 export const diff = (oldTree, newTree) => {
-
   const renderAndReplace = node => {
     const newNode = renderNode(newTree)
     node.replaceWith(newNode)

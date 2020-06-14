@@ -1,10 +1,9 @@
 /**
  * @returns {boolean}
  * @description Check if node is text
- * @param {string} node
+ * @param {any} node
  * */
-export const isTextNode = (node) =>
-  ['string', 'boolean', 'number'].includes(typeof node)
+export const isTextNode = node => ['string', 'boolean', 'number'].includes(typeof node)
 
 /**
  * @description Renders a single node
@@ -13,18 +12,16 @@ export const isTextNode = (node) =>
  * props: any
  * children: any[]
  * }} vnode
- * @returns {HTMLElement}
+ * @returns {HTMLElement | Text}
  */
-export const renderNode = (vnode) => {
-  let el
-
+export const renderNode = vnode => {
   if (isTextNode(vnode)) {
     return document.createTextNode(vnode.toString())
   }
 
   const { tag, props, children } = vnode
 
-  el = document.createElement(tag)
+  let el = document.createElement(tag)
 
   if (props) {
     for (let [k, v] of Object.entries(props)) {
@@ -36,7 +33,7 @@ export const renderNode = (vnode) => {
     }
   }
 
-  children.map((child) => el.appendChild(renderNode(child)))
+  children.map(child => el.appendChild(renderNode(child)))
 
   return el
 }
@@ -49,7 +46,7 @@ export const renderNode = (vnode) => {
  * children: any[]
  * }} vnode
  * @param {HTMLElement} target
- * @returns {HTMLElement}
+ * @returns {HTMLElement | Text}
  */
 export const render = (vnode, target) => {
   target.appendChild(renderNode(vnode))
