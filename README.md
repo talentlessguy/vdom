@@ -4,6 +4,7 @@ Simple JavaScript [Virtual DOM](https://reactjs.org/docs/faq-internals.html). Co
 
 ![](https://cdn.rawgit.com/LunaGao/BlessYourCodeTag/master/tags/unicorn.svg) ![](https://img.shields.io/github/languages/top/talentlessguy/vdom)
 [![](https://img.shields.io/twitter/follow/v1rtl?style=social)](https://twitter.com/v1rtl)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/82b9ea194b5f4020a7a77ec4638223e5)](https://www.codacy.com/manual/talentlessguy/vdom?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=talentlessguy/vdom&amp;utm_campaign=Badge_Grade)
 [![](https://img.shields.io/badge/DEV-Article-black?style=flat-square)](https://dev.to/talentlessguy/my-experience-writing-virtual-dom-8bn)
 [![](https://img.shields.io/badge/paypal-donate-blue.svg)](https://paypal.me/v1rtl)
 
