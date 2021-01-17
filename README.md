@@ -2,7 +2,7 @@
 
 <div align="center">
   <h1>vdom</h1>
-  Simple JavaScript <a href="https://reactjs.org/docs/faq-internals.html">Virtual DOM</a>. Compatible with <a href="https://github.com/developit/htm">html</a>.
+  Simple JavaScript <a href="https://reactjs.org/docs/faq-internals.html">Virtual DOM</a>. Compatible with <a href="https://github.com/developit/htm">htm</a>.
 
   ![](https://cdn.rawgit.com/LunaGao/BlessYourCodeTag/master/tags/unicorn.svg) ![](https://img.shields.io/github/languages/top/talentlessguy/vdom)
   [![](https://img.shields.io/twitter/follow/v1rtl?style=social)](https://twitter.com/v1rtl)
