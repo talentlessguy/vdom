@@ -1,6 +1,6 @@
 {
   "name": "simple-vdom",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/vdom.umd.js",
   "module": "dist/vdom.js",
   "repository": "https://github.com/talentlessguy/vdom.git",

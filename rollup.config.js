@@ -8,7 +8,7 @@ export default {
       format: 'esm'
     },
     {
-      file: 'dist/vdom.js',
+      file: 'dist/vdom.umd.js',
       format: 'umd',
       name: 'vdom'
     }
