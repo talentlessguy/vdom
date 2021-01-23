@@ -1,7 +1,8 @@
 {
   "name": "simple-vdom",
   "version": "0.0.1",
-  "main": "dist/vdom.js",
+  "main": "dist/vdom.umd.js",
+  "module": "dist/vdom.js",
   "repository": "https://github.com/talentlessguy/vdom.git",
   "author": "talentlessguy <pilll.PL22@gmail.com>",
   "description": "Simple JavaScript Virtual DOM",
@@ -10,9 +11,10 @@
     "dist"
   ],
   "devDependencies": {
-    "eslint": "^6.8.0",
+    "eslint": "^7.18.0",
     "htm": "^3.0.4",
-    "rollup": "^2.8.0"
+    "rollup": "^2.38.0",
+    "rollup-plugin-terser": "^7.0.2"
   },
   "scripts": {
     "dev": "rollup -cw",

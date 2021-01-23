@@ -4,10 +4,11 @@
   <h1>vdom</h1>
   Simple JavaScript <a href="https://reactjs.org/docs/faq-internals.html">Virtual DOM</a>. Compatible with <a href="https://github.com/developit/htm">htm</a>.
 
-  ![](https://cdn.rawgit.com/LunaGao/BlessYourCodeTag/master/tags/unicorn.svg) ![](https://img.shields.io/github/languages/top/talentlessguy/vdom)
-  [![Codacy Badge](https://app.codacy.com/project/badge/Grade/82b9ea194b5f4020a7a77ec4638223e5)](https://www.codacy.com/manual/talentlessguy/vdom?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=talentlessguy/vdom&amp;utm_campaign=Badge_Grade)
-  [![](https://img.shields.io/badge/DEV-Article-black?style=flat-square)](https://dev.to/talentlessguy/my-experience-writing-virtual-dom-8bn)
-  [![](https://img.shields.io/badge/paypal-donate-blue.svg)](https://paypal.me/v1rtl)
+![](https://cdn.rawgit.com/LunaGao/BlessYourCodeTag/master/tags/unicorn.svg) ![](https://img.shields.io/github/languages/top/talentlessguy/vdom)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/82b9ea194b5f4020a7a77ec4638223e5)](https://www.codacy.com/manual/talentlessguy/vdom?utm_source=github.com&utm_medium=referral&utm_content=talentlessguy/vdom&utm_campaign=Badge_Grade)
+[![](https://img.shields.io/badge/DEV-Article-black?style=flat-square)](https://dev.to/talentlessguy/my-experience-writing-virtual-dom-8bn)
+[![](https://img.shields.io/badge/paypal-donate-blue.svg)](https://paypal.me/v1rtl)
+
 </div>
 
 ## Install
@@ -28,7 +29,7 @@ yarn add simple-vdom
 To build the example, clone the repository and write this to command line:
 
 ```sh
-npm run example
+pnpm example
 ```
 
 It will build the example. Then, launch a server for `example` directory. For example:
@@ -48,7 +49,7 @@ import htm from 'htm'
 const html = htm.bind(h)
 
 // Create App component with a prop "counter"
-let App = counter => html`<p style="${{ fontSize: counter * 2 + 'px' }}">
+let App = (counter) => html`<p style="${{ fontSize: counter * 2 + 'px' }}">
   <span>${counter}</span>
 </p>`
 

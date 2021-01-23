@@ -4,14 +4,14 @@ import htm from 'htm'
 
 const html = htm.bind(h)
 
-let App = (counter) =>
+const App = (counter) =>
   html`
     <p style="${{ fontSize: counter * 10 + 'px' }}"><span>${counter}</span></p>
   `
 
 let AppWithProps = App(0)
 
-let mount = render(AppWithProps, document.getElementById('app'))
+const mount = render(AppWithProps, document.getElementById('app'))
 
 setInterval(() => {
   const newCounter = parseInt(Math.random() * 10)

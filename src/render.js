@@ -3,7 +3,8 @@
  * @description Check if node is text
  * @param {any} node
  * */
-export const isTextNode = node => ['string', 'boolean', 'number'].includes(typeof node)
+export const isTextNode = (node) =>
+  ['string', 'boolean', 'number'].includes(typeof node)
 
 /**
  * @description Renders a single node
@@ -14,26 +15,22 @@ export const isTextNode = node => ['string', 'boolean', 'number'].includes(typeo
  * }} vnode
  * @returns {HTMLElement | Text}
  */
-export const renderNode = vnode => {
-  if (isTextNode(vnode)) {
-    return document.createTextNode(vnode.toString())
-  }
+export const renderNode = (vnode) => {
+  if (isTextNode(vnode)) return document.createTextNode(vnode.toString())
 
   const { tag, props, children } = vnode
 
-  let el = document.createElement(tag)
+  const el = document.createElement(tag)
 
   if (props) {
-    for (let [k, v] of Object.entries(props)) {
+    for (const [k, v] of Object.entries(props)) {
       if (k === 'style') {
-        for (let [prop, val] of Object.entries(v)) {
-          el.style[prop] = val
-        }
+        for (const [prop, val] of Object.entries(v)) el.style[prop] = val
       } else el.setAttribute(k, v)
     }
   }
 
-  children.map(child => el.appendChild(renderNode(child)))
+  children.forEach((child) => el.appendChild(renderNode(child)))
 
   return el
 }
@@ -42,7 +39,7 @@ export const renderNode = vnode => {
  * @description Appends vDOM inside of real DOM
  * @param {{
  * tag: string
- * props: any
+ * props: { [key:string]: any }
  * children: any[]
  * }} vnode
  * @param {HTMLElement} target

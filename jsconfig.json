@@ -2,6 +2,6 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "lib": ["esnext"]
+    "lib": ["esnext", "dom"]
   }
 }
