@@ -81,9 +81,9 @@ setInterval(() => {
 
 ## API
 
-### `h` - hyperscript function
+### `h`
 
-returns vnode (a plain object)
+A hyperscript function that returns vnode (a plain object)
 
 ```js
 const el = h('h1', null, 'Hello')
@@ -99,9 +99,9 @@ console.log(el)
 */
 ```
 
-### `renderNode` - renders single vnode (created with `h`)
+### `renderNode`
 
-Converts objects created by `h` to DOM nodes
+Renders objects created by `h` to DOM nodes
 
 ```js
 const vnode = renderNode(html`<h1>Hello World</h1>`)
@@ -113,13 +113,17 @@ console.log(vnode)
 */
 ```
 
-### `render` - put vnode to container
+### `render`
+
+Append vnode to DOM container.
 
 ```js
 render(html`<h1>Hello World</h1>`, document.getElementById('app'))
 ```
 
-### `diff` - check for differences in DOM and return patches
+### `diff`
+
+Check for differences in DOM and return patches.
 
 ```js
 const App = html`<p>Hi</p>`
