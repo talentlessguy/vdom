@@ -1,6 +1,6 @@
 {
   "name": "simple-vdom",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/vdom.umd.js",
   "module": "dist/vdom.js",
   "repository": "https://github.com/talentlessguy/vdom.git",
@@ -9,6 +9,12 @@
   "license": "MIT",
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "dom",
+    "vdom",
+    "browser",
+    "ui"
   ],
   "devDependencies": {
     "eslint": "^7.18.0",
