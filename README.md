@@ -5,9 +5,6 @@
   Simple JavaScript <a href="https://reactjs.org/docs/faq-internals.html">Virtual DOM</a>. Compatible with <a href="https://github.com/developit/htm">htm</a>.
 
 ![](https://cdn.rawgit.com/LunaGao/BlessYourCodeTag/master/tags/unicorn.svg) ![](https://img.shields.io/github/languages/top/talentlessguy/vdom)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/82b9ea194b5f4020a7a77ec4638223e5)](https://www.codacy.com/manual/talentlessguy/vdom?utm_source=github.com&utm_medium=referral&utm_content=talentlessguy/vdom&utm_campaign=Badge_Grade)
-[![](https://img.shields.io/badge/DEV-Article-black?style=flat-square)](https://dev.to/talentlessguy/my-experience-writing-virtual-dom-8bn)
-[![](https://img.shields.io/badge/paypal-donate-blue.svg)](https://paypal.me/v1rtl)
 
 </div>
 
